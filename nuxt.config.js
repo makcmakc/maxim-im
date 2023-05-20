@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  buildModules: ['@nuxtjs/svg', '@nuxtjs/color-mode'],
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    }
+  },
+  buildModules: ['@nuxtjs/color-mode'],
   modules: ['@nuxtjs/color-mode'],
   css: ['@/assets/main.scss']
 })
