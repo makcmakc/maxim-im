@@ -1,23 +1,20 @@
 <template>
-
-  <!-- <div class="hero">
-    <div class="hero__title">MAXIM.IM BLOG</div>
-    <div class="hero__desc">Just My Little Blog with </div>
-  </div> -->
-
-
   <div class="articles-grid">
     <article class="article">
       <div class="article__img">
         <img src="@/assets/0.jpg" alt="">
       </div>
+      <!-- <div class="article__info">
+        <div class="article__info-date">20 Jan 2023</div>
+        <div class="article__info-category">Работа</div>
+      </div> -->
       <div class="article__body">
         <div class="article__category">
           <i class="article__category-dot article__category-dot--news"></i>
           <span class="article__category-text">Работа</span>
         </div>
         <h2 class="article__title">
-          История о том, как наш новый тимлид нифига не зная стал тимлидом
+          <a href="#">История о том, как наш новый тимлид нифига не зная стал тимлидом</a>
         </h2>
         <p class="article__desc">
           В этой статье я расскажу про боль, с которой я столкнулся за последние несколько дней. История о том, как в на...
@@ -105,6 +102,7 @@ useHead({
 .article {
   width: calc(50% - 10px);
   box-sizing: border-box;
+  position: relative;
   border: 1px solid #f4f3f3;
   border-radius: 15px;
   transition: border 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
@@ -118,12 +116,18 @@ useHead({
     box-shadow: 0 50px 50px -20px rgba(50,50,93,.03),0 30px 10px -30px rgba(0,0,0,.06);
   }
 
+  &__info {
+    position: absolute;
+
+  }
+
   &__img {
     width: 100%;
     min-height: 250px;
     background: #EDD950;
     height: 50%;
     border-radius: 15px 15px 0 0;
+    
 
     img {
       width: 100%;
@@ -178,14 +182,19 @@ useHead({
     margin-bottom: 10px;
     line-height: 34px;
     color: #000;    
+
+    &:hover {
+      // text-decoration: underline;
+      // color: #21de5a;
+    }
   }
 
   &__desc {
     margin: 0;
-  font-family: Inter,system-ui,Helvetica Neue,Helvetica,sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  color: #000;
+    font-family: Inter,system-ui,Helvetica Neue,Helvetica,sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000;
   }
 
   &--bg {
