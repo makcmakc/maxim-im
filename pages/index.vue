@@ -4,10 +4,6 @@
       <div class="article__img">
         <img src="@/assets/0.jpg" alt="">
       </div>
-      <!-- <div class="article__info">
-        <div class="article__info-date">20 Jan 2023</div>
-        <div class="article__info-category">Работа</div>
-      </div> -->
       <div class="article__body">
         <div class="article__category">
           <i class="article__category-dot article__category-dot--news"></i>
@@ -94,13 +90,11 @@ useHead({
 
 <style lang="scss">
 .articles-grid {
-  display: flex;
-  flex-wrap: wrap;
+  column-count: 2;
   gap: 20px;
 }
 
 .article {
-  width: calc(50% - 10px);
   box-sizing: border-box;
   position: relative;
   border: 1px solid #f4f3f3;
@@ -108,8 +102,11 @@ useHead({
   transition: border 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
   transform 0.15s ease-in-out;
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
+
+  height: max-content;
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 20px;
 
   &:hover {
     transform: translateY(-3px);
